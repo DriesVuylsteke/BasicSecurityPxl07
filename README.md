@@ -14,3 +14,6 @@ Nessus vs OpenVAS
 
 **Rolf**
 DES vs AES
+
+#Nuttige links
+Java-Php bridge: http://php-java-bridge.sourceforge.net/pjb/desktop-apps.php
