@@ -1,4 +1,5 @@
 Plugin ID | CVE | CVSS | Risk | Working | Done
+:---: | :--- | :---: | :---:| --- | ---
 10056 | CVE-1999-0678 | 5 | Medium |  | 
 10203 | CVE-1999-0618 | 10 | Critical |  | 
 10205 | CVE-1999-0651 | 7.5 | High |  | 
