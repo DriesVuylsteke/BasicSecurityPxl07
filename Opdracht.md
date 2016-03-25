@@ -70,9 +70,8 @@ Ook de input en output van het programma moet gebruiksvriendelijker gemaakt word
   - Uitbreiding hierop: je kan je message ook verbergen in sound of movie files. Dit is al wel een zware toepassing van steganografie.
 - Gebruik van Belgische eID certificaten
 
-Je kan gebruik maken van certificaten, maar nog een mogelijke uitbreiding hierop is het certificaat te gebruiken via een eID (dezelfde als je voor je elektronische belastingbrief gebruikt). Je hebt hiervoor wel een eID lezer nodig.
-
-Tip: https://www.eidtoolkit.be/nl/home-eid.arcx
+  - Je kan gebruik maken van certificaten, maar nog een mogelijke uitbreiding hierop is het certificaat te gebruiken via een eID (dezelfde als je voor je elektronische belastingbrief gebruikt). Je hebt hiervoor wel een eID lezer nodig.
+    Tip: https://www.eidtoolkit.be/nl/home-eid.arcx
 
 - Webbased maken met https connectie
 
@@ -94,6 +93,7 @@ De basisopdracht van dit aspect is:
 - Patch dan die vulnerabilities en doe de scan opnieuw. Toon aan dat alles nu safe is.  
 - Doe een Nessus scan op Metasploitable OS, een server waarin expres veel kwetsbaarheden zijn geïntroduceerd, zodat studenten hun skills kunnen testen. In principe zou je ook metasploit kunnen gebruiken, om zo’n gevonden vulnerability te gaan exploiten.   
   - Geef een omschrijving van minstens 3 vulnerabilities van Metasploitable, en hoe je die zou oplossen (patchen gaat niet goed lukken op Metasploitable OS, omdat dit echt een oefenserver is)  
+
 ##Minimaal voor S&N studenten:
 - OpenVAS
   - System&Networks studenten gebruiken niet alleen Nessus voor de opdracht van hierboven, maar ook OpenVAS. Studenten kunnen dan een vergelijking maken van de 2 systemen.
@@ -119,30 +119,32 @@ S&N studenten gebruiken best Kali OS om hun Nessus / OpenVAS / Armitage op te dr
 ##InfoSec Policy
 
 ###Basis:
-Security is een big issue in het bedrijfsleven vandaag. Daarom nemen de meeste bedrijven ‘information security policies’ op in hun contracten met de werknemers. Deze policies leggen in detail uit hoe de werknemers moeten omgaan met security in allerlei soorten situaties, of welke regels ze hiervoor moeten volgen. Denk hierbij bv aan een ‘Acceptable Use Policy’ (wat bv mag of niet mag op het bedrijfsnetwerk – torrents?), of een ‘Password Policy’ (hoe op te stellen, hoe dikwijls vernieuwen,…).
-Omdat deze policies een onderdeel vormen van het contract met de werknemers, zijn ze meestal ook opgesteld op een juridische manier, conform de wetten van het thuisland.
-Voor deze opdracht is het niet de bedoeling om zo’n wettelijk document op te stellen (dat is een taak voor juristen), maar wel een document met de krijtlijnen van zo’n policy, samen met de argumentatie waarom juist deze richtlijnen in de policy zouden moeten komen. 
-Als voorbeeldbedrijf, waarvoor jullie een InfoSec Policy gaan uitwerken, nemen jullie de Hogeschool PXL, met zijn verschillende soorten van ‘werknemers’: docenten, studenten, IT dienst, management,…
-Er bestaan voldoende policy templates op het internet, die jullie kunnen gebruiken ter inspiratie. Denk er aan: het is niet de bedoeling om een wettelijke tekst te schrijven, maar eerder: welke richtlijnen zouden jullie in een InfoSec Policy plaatsen, en waarom? Probeer dit zo objectief mogelijk te benaderen, en de policy niet op te stellen vanuit de specifieke noden van een IT student, maar eerder om de security van de Hogeschool als geheel te verbeteren. 
-De basis topics die in de InfoSec Policy moeten behandeld worden, zijn:
--	Acceptable Infrastructure Use Policy
-o	Netwerk: Wired – Wireless: wat mag (niet), waarom? 
-o	Printers
-o	PingPing
--	Password Policy
+Security is een big issue in het bedrijfsleven vandaag. Daarom nemen de meeste bedrijven ‘information security policies’ op in hun contracten met de werknemers. Deze policies leggen in detail uit hoe de werknemers moeten omgaan met security in allerlei soorten situaties, of welke regels ze hiervoor moeten volgen. Denk hierbij bv aan een ‘Acceptable Use Policy’ (wat bv mag of niet mag op het bedrijfsnetwerk – torrents?), of een ‘Password Policy’ (hoe op te stellen, hoe dikwijls vernieuwen,…).  
+Omdat deze policies een onderdeel vormen van het contract met de werknemers, zijn ze meestal ook opgesteld op een juridische manier, conform de wetten van het thuisland.  
+Voor deze opdracht is het niet de bedoeling om zo’n wettelijk document op te stellen (dat is een taak voor juristen), maar wel een document met de krijtlijnen van zo’n policy, samen met de argumentatie waarom juist deze richtlijnen in de policy zouden moeten komen.   
+Als voorbeeldbedrijf, waarvoor jullie een InfoSec Policy gaan uitwerken, nemen jullie de Hogeschool PXL, met zijn verschillende soorten van ‘werknemers’: docenten, studenten, IT dienst, management,…  
+Er bestaan voldoende policy templates op het internet, die jullie kunnen gebruiken ter inspiratie. Denk er aan: het is niet de bedoeling om een wettelijke tekst te schrijven, maar eerder: welke richtlijnen zouden jullie in een InfoSec Policy plaatsen, en waarom? Probeer dit zo objectief mogelijk te benaderen, en de policy niet op te stellen vanuit de specifieke noden van een IT student, maar eerder om de security van de Hogeschool als geheel te verbeteren.   
+De basis topics die in de InfoSec Policy moeten behandeld worden, zijn:  
+- Acceptable Infrastructure Use Policy
+  - Netwerk: Wired – Wireless: wat mag (niet), waarom? 
+  - Printers
+  - PingPing
+  - Password Policy
+  
 Denk er aan: duidelijk verwoorden waarom je die richtlijn zou gebruiken, voor welke type gebruiker, onder welke omstandigheden, e.d. !
 
 ###Minimaal voor IT Management studenten:
 
-IT Management studenten worden verwacht om meerder topcis te behandelen voor de InfoSec Policy.
-De minimale topics, bovenop de basis topics:
--	Email Policy
--	Teleworker Policy (Remote Access)
--	BYOD Policy
--	BYOA Policy (Bring Your Own App) 
-Deze minimale topics kunnen dan nog verder uitgebreid worden met andere topics, waarvan jullie vinden dat die absoluut in een InfoSec Policy voor de Hogeschool PXL thuishoren.
-Denk echt aan de verschillende soorten gebruikers: een student moet niet dezelfde stappen ondernemen om zijn data veilig te houden als bv een docent, of de algemeen directeur. 
-Denk ook goed aan de relatie tussen usability en security. Hoe hoger de security, hoe lager de usability, en visa versa. Je kan vragen om dagelijks een nieuw paswoord te gebruiken van 100 chars lang (heel secure), maar daardoor gaat het gebruiksgemak wel zeer laag zijn. Dus goed argumenteren waarom je een bepaalde richtlijn zou uitschrijven, om een aanvaardbaar compromis te hebben tussen gebruiksgemak en security.
+IT Management studenten worden verwacht om meerder topcis te behandelen voor de InfoSec Policy.  
+De minimale topics, bovenop de basis topics:  
+- Email Policy
+- Teleworker Policy (Remote Access)
+- BYOD Policy
+- BYOA Policy (Bring Your Own App) 
+
+Deze minimale topics kunnen dan nog verder uitgebreid worden met andere topics, waarvan jullie vinden dat die absoluut in een InfoSec Policy voor de Hogeschool PXL thuishoren.  
+Denk echt aan de verschillende soorten gebruikers: een student moet niet dezelfde stappen ondernemen om zijn data veilig te houden als bv een docent, of de algemeen directeur.   
+Denk ook goed aan de relatie tussen usability en security. Hoe hoger de security, hoe lager de usability, en visa versa. Je kan vragen om dagelijks een nieuw paswoord te gebruiken van 100 chars lang (heel secure), maar daardoor gaat het gebruiksgemak wel zeer laag zijn. Dus goed argumenteren waarom je een bepaalde richtlijn zou uitschrijven, om een aanvaardbaar compromis te hebben tussen gebruiksgemak en security.  
 
 
 
