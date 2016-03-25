@@ -35,7 +35,7 @@ Note: In principe heb je voor het bovenstaande certificaten nodig om de linking 
 
 De basisvereisten (evt puur command line based, GUI is uitbreiding) van het programma zijn stapsgewijs:  
 - Programma vraagt keuze te maken tussen encrypteren of decrypteren  
-- Bij encrypteren:  
+- Bij encrypteren:
   - Programma genereert 1 symmetrische key (DES of AES)  
   - Programma genereert 1 private en 1 public RSA key voor een gebruiker Alice  
     - Private key wordt gesaved in een file als Private_A  
@@ -49,7 +49,7 @@ De basisvereisten (evt puur command line based, GUI is uitbreiding) van het prog
   - Programma encrypteert de symmetric key met de public key van Bob, en saved het resultaat in een file (File_2)  
   - Programma maakt een hash van de oorspronkelijke boodschap  
   - Programma encrypteert die hash met de private key van Alice, en saved het resultaat in een file (File_3)  
-- Bij decrypteren:  
+- Bij decrypteren:
   - Programma vraagt File_1, File_2, File_3, Public_A en Private_B  
   - Programma gebruikt Private_B om File_2 te decrypteren, en zo de symmetrische key te verkrijgen  
   - Programma gebruikt die symmetrische key om File_1 te decrypteren om terug de verstuurde boodschap te verkrijgen, en toont die boodschap dan ook op het scherm  
@@ -89,7 +89,7 @@ Vooraleer een server live beschikbaar is via het internet, moet deze gecontrolee
 
 De meest gebruikte vulnerability scanners zijn: Nessus en OpenVAS. OpenVAS is open source, en Nessus is betalend, tenzij je de Home Feed gebruikt voor persoonlijk gebruik / educational doeleinde.  
 
-De basisopdracht van dit aspect is:  
+De basisopdracht van dit aspect is:
 - Doe Nessus scan (Home Feed) op een Windows OS (best om een iets oudere versie van Windows te nemen, zoals bv Windows XP). Zowel scannen met, als zonder firewall.  
 - Geef een omschrijving van de vulnerabilities die je vindt. Geef dus een verstaanbare omschrijving van het gevaar van die vulnerabilities, waar de service kwetsbaar is.  
 - Patch dan die vulnerabilities en doe de scan opnieuw. Toon aan dat alles nu safe is.  
@@ -131,7 +131,7 @@ Als voorbeeldbedrijf, waarvoor jullie een InfoSec Policy gaan uitwerken, nemen j
 
 Er bestaan voldoende policy templates op het internet, die jullie kunnen gebruiken ter inspiratie. Denk er aan: het is niet de bedoeling om een wettelijke tekst te schrijven, maar eerder: welke richtlijnen zouden jullie in een InfoSec Policy plaatsen, en waarom? Probeer dit zo objectief mogelijk te benaderen, en de policy niet op te stellen vanuit de specifieke noden van een IT student, maar eerder om de security van de Hogeschool als geheel te verbeteren.   
 
-De basis topics die in de InfoSec Policy moeten behandeld worden, zijn:  
+De basis topics die in de InfoSec Policy moeten behandeld worden, zijn:
 - Acceptable Infrastructure Use Policy
   - Netwerk: Wired – Wireless: wat mag (niet), waarom? 
   - Printers
@@ -144,7 +144,7 @@ Denk er aan: duidelijk verwoorden waarom je die richtlijn zou gebruiken, voor we
 
 IT Management studenten worden verwacht om meerder topcis te behandelen voor de InfoSec Policy.  
 
-De minimale topics, bovenop de basis topics:  
+De minimale topics, bovenop de basis topics:
 - Email Policy
 - Teleworker Policy (Remote Access)
 - BYOD Policy
