@@ -2,13 +2,21 @@
 
 ##Algemeen
 De opdracht is een open opdracht: er wordt opgegeven wat de minimale vereisten zijn van de opdracht, maar er worden ook uitbreidingen voorgesteld om een hogere score te behalen. De studenten mogen zelf ook uitbreidingen voorstellen en implementeren, in overeenstemming met de begeleidende docent.  
+
 De opdracht is een team opdracht: er wordt in een team gewerkt van 3-4 studenten. De docent zal regelmatig de samenwerking en vordering van het project bij de teams nagaan. Een groepsopdracht betekent ook een groepscijfer, tenzij de studenten tijdens deze feedback momenten zelf aangeven dat er een eventuele individuele aanpassing gewenst is.  
+
 Er zal tijdens de lessen steeds tijd voorzien worden om in team aan de opdracht verder te werken. De verdediging van de opdracht zal tijdens de laatste lessen van het OLOD plaatsvinden.  
+
 De opdracht zelf bestaat uit 3 aspecten. Ieder team wordt verondersteld de minimale requirements van hun gekozen track te behalen + de basis requirements van ten minste 1 andere track. Aangezien het een open opdracht is, kunnen de studenten ook kiezen om meer dan de basis of minimale requirements van een track te doen.   
+
 Voor het AppDev-aspect: voor het maken van het Crypto-programma, mag er vertrokken worden van bestaande code op het internet, mits duidelijke referentie in de commentaar + studenten moeten de code wel goed begrijpen. Het onderling sharen van code tussen de teams is wel niet toegestaan.  
+
 De bedoeling van het AppDev-aspect is immers niet puur het programmeren, maar wel het toepassen en begrijpen van security aspecten.  
+
 Voor het Systems&Networks aspect: hier wordt het best gestart met een VM met daarop het Kali OS. De Nessus (OpenVAS) scan wordt dan uitgevoerd vanuit Kali naar een andere VM met het target OS op. Om een Nessus scan te doen, wordt gebruikt gemaakt van de gratis Nessus Home Feed plugin, als vulnerability database.  
-##LET OP:## het uitvoeren van een vulnerability scan mag enkel op uw eigen hosts/netwerk! Wees er dus zeker van dat je de scan niet doet over het PXL netwerk, of op een host waarvoor je de toestemming niet hebt = cybercrime!  
+
+LET OP: het uitvoeren van een vulnerability scan mag enkel op uw eigen hosts/netwerk! Wees er dus zeker van dat je de scan niet doet over het PXL netwerk, of op een host waarvoor je de toestemming niet hebt = cybercrime!  
+
 Voor het IT Management aspect: hier mag gestart worden van templates over InfoSec Policy’s die te vinden zijn op het internet, maar dit is enkel voor inspiratie. Het is niet de bedoeling om een juridische tekst te schrijven. Wel moet er duidelijk aangegeven worden welke policies jullie zouden toepassen (en vooral waarom) indien je medeverantwoordelijk zou zijn voor het security management van de PXL infrastructuur (netwerk, printers, hosts,…).  
 
  
@@ -18,39 +26,39 @@ Voor het IT Management aspect: hier mag gestart worden van templates over InfoSe
 
 ###Basis:
 De bedoeling is om een programma te maken, in een programmeeromgeving naar keuze,  om een file veilig van A naar B te sturen (volgens de principes van hybride crypto), zodat:  
-•  De ontvanger zeker is dat hij de enige is die de file terug kan decrypteren
-•  De ontvanger zeker is dat de file van A afkomstig is
-•  De ontvanger zeker is dat er niets veranderd is aan de file tijdens transport
-•  De zender niet meer kan ontkennen dat hij de file gestuurd heeft
-Note: In principe heb je voor het bovenstaande certificaten nodig om de linking te kunnen maken tussen een persoon A en zijn public key. Dit is voor de basisuitwerking geen vereiste. De public key van een persoon mag gewoon als string opgeslagen worden.
-De basisvereisten (evt puur command line based, GUI is uitbreiding) van het programma zijn stapsgewijs:
--	Programma vraagt keuze te maken tussen encrypteren of decrypteren
--	Bij encrypteren:
-o	Programma genereert 1 symmetrische key (DES of AES)
-o	Programma genereert 1 private en 1 public RSA key voor een gebruiker Alice
-?	Private key wordt gesaved in een file als Private_A
-?	Public key wordt gesaved in een file als Public_A
-o	Programma genereert 1 private en 1 public RSA key voor een gebruiker Bob
-?	Private key wordt gesaved in een file als Private_B
-?	Public key wordt gesaved in een file als Public_B
+- De ontvanger zeker is dat hij de enige is die de file terug kan decrypteren  
+- De ontvanger zeker is dat de file van A afkomstig is  
+- De ontvanger zeker is dat er niets veranderd is aan de file tijdens transport  
+- De zender niet meer kan ontkennen dat hij de file gestuurd heeft  
+Note: In principe heb je voor het bovenstaande certificaten nodig om de linking te kunnen maken tussen een persoon A en zijn public key. Dit is voor de basisuitwerking geen vereiste. De public key van een persoon mag gewoon als string opgeslagen worden.  
+De basisvereisten (evt puur command line based, GUI is uitbreiding) van het programma zijn stapsgewijs:  
+- Programma vraagt keuze te maken tussen encrypteren of decrypteren  
+- Bij encrypteren:  
+  - Programma genereert 1 symmetrische key (DES of AES)  
+  - Programma genereert 1 private en 1 public RSA key voor een gebruiker Alice  
+    - Private key wordt gesaved in een file als Private_A  
+    - Public key wordt gesaved in een file als Public_A  
+  - Programma genereert 1 private en 1 public RSA key voor een gebruiker Bob  
+    - Private key wordt gesaved in een file als Private_B  
+    - Public key wordt gesaved in een file als Public_B  
 
-o	Programma vraagt input aan Alice (bv. een boodschap om door te sturen)
-o	Programma gebruikt de symmetric key om de boodschap te encrypteren, en saved het resultaat in een file (File_1)
-o	Programma encrypteert de symmetric key met de public key van Bob, en saved het resultaat in een file (File_2)
-o	Programma maakt een hash van de oorspronkelijke boodschap
-o	Programma encrypteert die hash met de private key van Alice, en saved het resultaat in een file (File_3)
--	Bij decrypteren:
-o	Programma vraagt File_1, File_2, File_3, Public_A en Private_B
-o	Programma gebruikt Private_B om File_2 te decrypteren, en zo de symmetrische key te verkrijgen
-o	Programma gebruikt die symmetrische key om File_1 te decrypteren om terug de verstuurde boodschap te verkrijgen, en toont die boodschap dan ook op het scherm
-o	Programma berekent zelf de hash van die boodschap
-o	Programma gebruikt Public_A om File_3 te decrypteren, en zo terug de hash te verkrijgen van de originele file
-o	Programma controleert of de gedecrypteerde hash, en de zelf berekende hash overeenkomen, en geeft een boodschap indien ok of niet
+  - Programma vraagt input aan Alice (bv. een boodschap om door te sturen)  
+  - Programma gebruikt de symmetric key om de boodschap te encrypteren, en saved het resultaat in een file (File_1)  
+  - Programma encrypteert de symmetric key met de public key van Bob, en saved het resultaat in een file (File_2)  
+  - Programma maakt een hash van de oorspronkelijke boodschap  
+  - Programma encrypteert die hash met de private key van Alice, en saved het resultaat in een file (File_3)  
+- Bij decrypteren:  
+  - Programma vraagt File_1, File_2, File_3, Public_A en Private_B  
+  - Programma gebruikt Private_B om File_2 te decrypteren, en zo de symmetrische key te verkrijgen  
+  - Programma gebruikt die symmetrische key om File_1 te decrypteren om terug de verstuurde boodschap te verkrijgen, en toont die boodschap dan ook op het scherm  
+  - Programma berekent zelf de hash van die boodschap  
+  - Programma gebruikt Public_A om File_3 te decrypteren, en zo terug de hash te verkrijgen van de originele file  
+  - Programma controleert of de gedecrypteerde hash, en de zelf berekende hash overeenkomen, en geeft een boodschap indien ok of niet  
 
 ###Minimaal voor AppDev studenten:
-Bovenstaande programma mag in een command-line vorm, als enkel de basis van die opdracht wordt gedaan. Voor de AppDev studenten wordt dit minimaal uitgebreid naar een GUI-vorm.
-Vooraleer te starten met de GUI, worden er eerst mockups gemaakt voor het programma, zodat er voldoende aandacht kan besteed worden aan de verschillende schermen, plaatsen knoppen, e.d.
-Ook de input en output van het programma moet gebruiksvriendelijker gemaakt worden bij de AppDev studenten: gebruik een filepicker om een invoerbestand te selecteren (dus niet meer gewoon een tekst ingeven, maar een willekeurige file om te encrypteren), filepicker voor key-management te doen, e.d. meer.
+Bovenstaande programma mag in een command-line vorm, als enkel de basis van die opdracht wordt gedaan. Voor de AppDev studenten wordt dit minimaal uitgebreid naar een GUI-vorm.  
+Vooraleer te starten met de GUI, worden er eerst mockups gemaakt voor het programma, zodat er voldoende aandacht kan besteed worden aan de verschillende schermen, plaatsen knoppen, e.d.  
+Ook de input en output van het programma moet gebruiksvriendelijker gemaakt worden bij de AppDev studenten: gebruik een filepicker om een invoerbestand te selecteren (dus niet meer gewoon een tekst ingeven, maar een willekeurige file om te encrypteren), filepicker voor key-management te doen, e.d. meer.  
 
 ###Mogelijke uitbreidingen:
 1.	Steganografie: (aangeraden uitbreiding)
