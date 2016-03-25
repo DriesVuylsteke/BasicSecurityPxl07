@@ -31,7 +31,7 @@ De bedoeling is om een programma te maken, in een programmeeromgeving naar keuze
 - De ontvanger zeker is dat er niets veranderd is aan de file tijdens transport  
 - De zender niet meer kan ontkennen dat hij de file gestuurd heeft  
 Note: In principe heb je voor het bovenstaande certificaten nodig om de linking te kunnen maken tussen een persoon A en zijn public key. Dit is voor de basisuitwerking geen vereiste. De public key van een persoon mag gewoon als string opgeslagen worden.  
-De basisvereisten (evt puur command line based, GUI is uitbreiding) van het programma zijn stapsgewijs:  
+####De basisvereisten (evt puur command line based, GUI is uitbreiding) van het programma zijn stapsgewijs:  
 - Programma vraagt keuze te maken tussen encrypteren of decrypteren  
 - Bij encrypteren:  
   - Programma genereert 1 symmetrische key (DES of AES)  
