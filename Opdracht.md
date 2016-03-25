@@ -44,11 +44,12 @@ De basisvereisten (evt puur command line based, GUI is uitbreiding) van het prog
     - Private key wordt gesaved in een file als Private_B  
     - Public key wordt gesaved in een file als Public_B  
 
-  - Programma vraagt input aan Alice (bv. een boodschap om door te sturen)  
+  - Programma vraagt input aan Alice (bv. een boodschap om door te sturen)
   - Programma gebruikt de symmetric key om de boodschap te encrypteren, en saved het resultaat in een file (File_1)  
   - Programma encrypteert de symmetric key met de public key van Bob, en saved het resultaat in een file (File_2)  
   - Programma maakt een hash van de oorspronkelijke boodschap  
   - Programma encrypteert die hash met de private key van Alice, en saved het resultaat in een file (File_3)  
+
 - Bij decrypteren:
   - Programma vraagt File_1, File_2, File_3, Public_A en Private_B  
   - Programma gebruikt Private_B om File_2 te decrypteren, en zo de symmetrische key te verkrijgen  
