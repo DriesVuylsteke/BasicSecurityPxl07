@@ -86,7 +86,9 @@ Nog wat voorbeelden: gebruik van threading om de snelheid van het programma te o
 #Opdracht Basic Security – Systems&Networks aspect: Vulnerability Analysis
 ##Basis:
 Vooraleer een server live beschikbaar is via het internet, moet deze gecontroleerd worden op mogelijke vulnerabilities. Indien er kwetsbaarheden gevonden zijn, moeten deze eerst gepatched worden, zodat er geen exploits meer mogelijk zijn.  
+
 De meest gebruikte vulnerability scanners zijn: Nessus en OpenVAS. OpenVAS is open source, en Nessus is betalend, tenzij je de Home Feed gebruikt voor persoonlijk gebruik / educational doeleinde.  
+
 De basisopdracht van dit aspect is:  
 - Doe Nessus scan (Home Feed) op een Windows OS (best om een iets oudere versie van Windows te nemen, zoals bv Windows XP). Zowel scannen met, als zonder firewall.  
 - Geef een omschrijving van de vulnerabilities die je vindt. Geef dus een verstaanbare omschrijving van het gevaar van die vulnerabilities, waar de service kwetsbaar is.  
@@ -120,10 +122,15 @@ S&N studenten gebruiken best Kali OS om hun Nessus / OpenVAS / Armitage op te dr
 
 ###Basis:
 Security is een big issue in het bedrijfsleven vandaag. Daarom nemen de meeste bedrijven ‘information security policies’ op in hun contracten met de werknemers. Deze policies leggen in detail uit hoe de werknemers moeten omgaan met security in allerlei soorten situaties, of welke regels ze hiervoor moeten volgen. Denk hierbij bv aan een ‘Acceptable Use Policy’ (wat bv mag of niet mag op het bedrijfsnetwerk – torrents?), of een ‘Password Policy’ (hoe op te stellen, hoe dikwijls vernieuwen,…).  
+
 Omdat deze policies een onderdeel vormen van het contract met de werknemers, zijn ze meestal ook opgesteld op een juridische manier, conform de wetten van het thuisland.  
+
 Voor deze opdracht is het niet de bedoeling om zo’n wettelijk document op te stellen (dat is een taak voor juristen), maar wel een document met de krijtlijnen van zo’n policy, samen met de argumentatie waarom juist deze richtlijnen in de policy zouden moeten komen.   
+
 Als voorbeeldbedrijf, waarvoor jullie een InfoSec Policy gaan uitwerken, nemen jullie de Hogeschool PXL, met zijn verschillende soorten van ‘werknemers’: docenten, studenten, IT dienst, management,…  
+
 Er bestaan voldoende policy templates op het internet, die jullie kunnen gebruiken ter inspiratie. Denk er aan: het is niet de bedoeling om een wettelijke tekst te schrijven, maar eerder: welke richtlijnen zouden jullie in een InfoSec Policy plaatsen, en waarom? Probeer dit zo objectief mogelijk te benaderen, en de policy niet op te stellen vanuit de specifieke noden van een IT student, maar eerder om de security van de Hogeschool als geheel te verbeteren.   
+
 De basis topics die in de InfoSec Policy moeten behandeld worden, zijn:  
 - Acceptable Infrastructure Use Policy
   - Netwerk: Wired – Wireless: wat mag (niet), waarom? 
@@ -136,6 +143,7 @@ Denk er aan: duidelijk verwoorden waarom je die richtlijn zou gebruiken, voor we
 ###Minimaal voor IT Management studenten:
 
 IT Management studenten worden verwacht om meerder topcis te behandelen voor de InfoSec Policy.  
+
 De minimale topics, bovenop de basis topics:  
 - Email Policy
 - Teleworker Policy (Remote Access)
@@ -143,7 +151,9 @@ De minimale topics, bovenop de basis topics:
 - BYOA Policy (Bring Your Own App) 
 
 Deze minimale topics kunnen dan nog verder uitgebreid worden met andere topics, waarvan jullie vinden dat die absoluut in een InfoSec Policy voor de Hogeschool PXL thuishoren.  
+
 Denk echt aan de verschillende soorten gebruikers: een student moet niet dezelfde stappen ondernemen om zijn data veilig te houden als bv een docent, of de algemeen directeur.   
+
 Denk ook goed aan de relatie tussen usability en security. Hoe hoger de security, hoe lager de usability, en visa versa. Je kan vragen om dagelijks een nieuw paswoord te gebruiken van 100 chars lang (heel secure), maar daardoor gaat het gebruiksgemak wel zeer laag zijn. Dus goed argumenteren waarom je een bepaalde richtlijn zou uitschrijven, om een aanvaardbaar compromis te hebben tussen gebruiksgemak en security.  
 
 
