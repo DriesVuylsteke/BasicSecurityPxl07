@@ -1,4 +1,4 @@
-#Basic Security – PE Opdracht 
+#Basic Security â€“ PE Opdracht 
 
 ##Algemeen
 De opdracht is een open opdracht: er wordt opgegeven wat de minimale vereisten zijn van de opdracht, maar er worden ook uitbreidingen voorgesteld om een hogere score te behalen. De studenten mogen zelf ook uitbreidingen voorstellen en implementeren, in overeenstemming met de begeleidende docent.  
@@ -17,10 +17,10 @@ Voor het Systems&Networks aspect: hier wordt het best gestart met een VM met daa
 
 LET OP: het uitvoeren van een vulnerability scan mag enkel op uw eigen hosts/netwerk! Wees er dus zeker van dat je de scan niet doet over het PXL netwerk, of op een host waarvoor je de toestemming niet hebt = cybercrime!  
 
-Voor het IT Management aspect: hier mag gestart worden van templates over InfoSec Policy’s die te vinden zijn op het internet, maar dit is enkel voor inspiratie. Het is niet de bedoeling om een juridische tekst te schrijven. Wel moet er duidelijk aangegeven worden welke policies jullie zouden toepassen (en vooral waarom) indien je medeverantwoordelijk zou zijn voor het security management van de PXL infrastructuur (netwerk, printers, hosts,…).  
+Voor het IT Management aspect: hier mag gestart worden van templates over InfoSec Policyâ€™s die te vinden zijn op het internet, maar dit is enkel voor inspiratie. Het is niet de bedoeling om een juridische tekst te schrijven. Wel moet er duidelijk aangegeven worden welke policies jullie zouden toepassen (en vooral waarom) indien je medeverantwoordelijk zou zijn voor het security management van de PXL infrastructuur (netwerk, printers, hosts,â€¦).  
 
  
-#Opdracht Basic Security – AppDev aspect:
+#Opdracht Basic Security â€“ AppDev aspect:
  
 ##Crypto Program
 
@@ -43,8 +43,7 @@ De basisvereisten (evt puur command line based, GUI is uitbreiding) van het prog
   - Programma genereert 1 private en 1 public RSA key voor een gebruiker Bob  
     - Private key wordt gesaved in een file als Private_B  
     - Public key wordt gesaved in een file als Public_B  
-
-  - Programma vraagt input aan Alice (bv. een boodschap om door te sturen)
+  - Programma vraagt input aan Alice (bv. een boodschap om door te sturen)  
   - Programma gebruikt de symmetric key om de boodschap te encrypteren, en saved het resultaat in een file (File_1)  
   - Programma encrypteert de symmetric key met de public key van Bob, en saved het resultaat in een file (File_2)  
   - Programma maakt een hash van de oorspronkelijke boodschap  
@@ -79,12 +78,12 @@ Ook de input en output van het programma moet gebruiksvriendelijker gemaakt word
   - In plaats van een standalone applicatie (minimale vereiste) maak je een webbased applicatie, of toch met een webbased front end. Indien je dit doet, moet je ook de browser connectie beveiligen via SSL. Je moet geen betalend certificaat hiervoor gebruiken, een self-signed is goed genoeg.
 
 - (Web based) vulnerability scan
-  - De S&B opdracht (zie hieronder) is het maken van een vulnerability scan op een OS. Er bestaan ook tools om programma code te laten scannen op mogelijke vulnerabilities (XSS, SQL injection,…). Probeer eens zo een scanner voor uw programmeeromgeving, deel je resultaten mee, en je oplossingen voor mogelijke issues.
+  - De S&B opdracht (zie hieronder) is het maken van een vulnerability scan op een OS. Er bestaan ook tools om programma code te laten scannen op mogelijke vulnerabilities (XSS, SQL injection,â€¦). Probeer eens zo een scanner voor uw programmeeromgeving, deel je resultaten mee, en je oplossingen voor mogelijke issues.
 
 Er zijn ook nog tal van andere, extra, uitbreidingen mogelijk voor deze opdracht. Communiceer goed met de docent, indien je een andere uitbreiding overweegt. Het is immers een open opdracht.
-Nog wat voorbeelden: gebruik van threading om de snelheid van het programma te optimaliseren, gebruik van meerdere programmeeromgevingen en die met elkaar laten communiceren (bv een front-end in .NET en een backend in Java), …
+Nog wat voorbeelden: gebruik van threading om de snelheid van het programma te optimaliseren, gebruik van meerdere programmeeromgevingen en die met elkaar laten communiceren (bv een front-end in .NET en een backend in Java), â€¦
  
-#Opdracht Basic Security – Systems&Networks aspect: Vulnerability Analysis
+#Opdracht Basic Security â€“ Systems&Networks aspect: Vulnerability Analysis
 ##Basis:
 Vooraleer een server live beschikbaar is via het internet, moet deze gecontroleerd worden op mogelijke vulnerabilities. Indien er kwetsbaarheden gevonden zijn, moeten deze eerst gepatched worden, zodat er geen exploits meer mogelijk zijn.  
 
@@ -94,7 +93,7 @@ De basisopdracht van dit aspect is:
 - Doe Nessus scan (Home Feed) op een Windows OS (best om een iets oudere versie van Windows te nemen, zoals bv Windows XP). Zowel scannen met, als zonder firewall.  
 - Geef een omschrijving van de vulnerabilities die je vindt. Geef dus een verstaanbare omschrijving van het gevaar van die vulnerabilities, waar de service kwetsbaar is.  
 - Patch dan die vulnerabilities en doe de scan opnieuw. Toon aan dat alles nu safe is.  
-- Doe een Nessus scan op Metasploitable OS, een server waarin expres veel kwetsbaarheden zijn geïntroduceerd, zodat studenten hun skills kunnen testen. In principe zou je ook metasploit kunnen gebruiken, om zo’n gevonden vulnerability te gaan exploiten.   
+- Doe een Nessus scan op Metasploitable OS, een server waarin expres veel kwetsbaarheden zijn geÃ¯ntroduceerd, zodat studenten hun skills kunnen testen. In principe zou je ook metasploit kunnen gebruiken, om zoâ€™n gevonden vulnerability te gaan exploiten.   
   - Geef een omschrijving van minstens 3 vulnerabilities van Metasploitable, en hoe je die zou oplossen (patchen gaat niet goed lukken op Metasploitable OS, omdat dit echt een oefenserver is)  
 
 ##Minimaal voor S&N studenten:
@@ -111,30 +110,30 @@ De basisopdracht van dit aspect is:
 S&N studenten gebruiken best Kali OS om hun Nessus / OpenVAS / Armitage op te draaien. 
 
 ##Mogelijke extra uitbreidingen:
-- Opzoeken van specifieke CVE’s om te gebruiken in uw vulnerability scans.
-- Extra OS’en scannen en analyse doen van vulnerabilities
-  - Bv Windows Servers, Linux Servers, Mac OS X, mobile (Android?),…
+- Opzoeken van specifieke CVEâ€™s om te gebruiken in uw vulnerability scans.
+- Extra OSâ€™en scannen en analyse doen van vulnerabilities
+  - Bv Windows Servers, Linux Servers, Mac OS X, mobile (Android?),â€¦
 - De resultaten van de Nessus scan opslagen, en gebruiken in het metasploit-framework (ingebouwd in Kali). Daarna wordt een manueel exploit gedaan (dus niet met Armitage)
-- …
+- â€¦
  
-#Opdracht Basic Security – IT Management aspect: 
+#Opdracht Basic Security â€“ IT Management aspect: 
 
 ##InfoSec Policy
 
 ###Basis:
-Security is een big issue in het bedrijfsleven vandaag. Daarom nemen de meeste bedrijven ‘information security policies’ op in hun contracten met de werknemers. Deze policies leggen in detail uit hoe de werknemers moeten omgaan met security in allerlei soorten situaties, of welke regels ze hiervoor moeten volgen. Denk hierbij bv aan een ‘Acceptable Use Policy’ (wat bv mag of niet mag op het bedrijfsnetwerk – torrents?), of een ‘Password Policy’ (hoe op te stellen, hoe dikwijls vernieuwen,…).  
+Security is een big issue in het bedrijfsleven vandaag. Daarom nemen de meeste bedrijven â€˜information security policiesâ€™ op in hun contracten met de werknemers. Deze policies leggen in detail uit hoe de werknemers moeten omgaan met security in allerlei soorten situaties, of welke regels ze hiervoor moeten volgen. Denk hierbij bv aan een â€˜Acceptable Use Policyâ€™ (wat bv mag of niet mag op het bedrijfsnetwerk â€“ torrents?), of een â€˜Password Policyâ€™ (hoe op te stellen, hoe dikwijls vernieuwen,â€¦).  
 
 Omdat deze policies een onderdeel vormen van het contract met de werknemers, zijn ze meestal ook opgesteld op een juridische manier, conform de wetten van het thuisland.  
 
-Voor deze opdracht is het niet de bedoeling om zo’n wettelijk document op te stellen (dat is een taak voor juristen), maar wel een document met de krijtlijnen van zo’n policy, samen met de argumentatie waarom juist deze richtlijnen in de policy zouden moeten komen.   
+Voor deze opdracht is het niet de bedoeling om zoâ€™n wettelijk document op te stellen (dat is een taak voor juristen), maar wel een document met de krijtlijnen van zoâ€™n policy, samen met de argumentatie waarom juist deze richtlijnen in de policy zouden moeten komen.   
 
-Als voorbeeldbedrijf, waarvoor jullie een InfoSec Policy gaan uitwerken, nemen jullie de Hogeschool PXL, met zijn verschillende soorten van ‘werknemers’: docenten, studenten, IT dienst, management,…  
+Als voorbeeldbedrijf, waarvoor jullie een InfoSec Policy gaan uitwerken, nemen jullie de Hogeschool PXL, met zijn verschillende soorten van â€˜werknemersâ€™: docenten, studenten, IT dienst, management,â€¦  
 
 Er bestaan voldoende policy templates op het internet, die jullie kunnen gebruiken ter inspiratie. Denk er aan: het is niet de bedoeling om een wettelijke tekst te schrijven, maar eerder: welke richtlijnen zouden jullie in een InfoSec Policy plaatsen, en waarom? Probeer dit zo objectief mogelijk te benaderen, en de policy niet op te stellen vanuit de specifieke noden van een IT student, maar eerder om de security van de Hogeschool als geheel te verbeteren.   
 
 De basis topics die in de InfoSec Policy moeten behandeld worden, zijn:
 - Acceptable Infrastructure Use Policy
-  - Netwerk: Wired – Wireless: wat mag (niet), waarom? 
+  - Netwerk: Wired â€“ Wireless: wat mag (niet), waarom? 
   - Printers
   - PingPing
   - Password Policy
