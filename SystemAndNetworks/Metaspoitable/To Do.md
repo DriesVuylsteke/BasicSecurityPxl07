@@ -15,7 +15,7 @@ Plugin ID | CVE | CVSS | Risk | Working | Done
 20007 |  | 5 | Medium |  | 
 26928 |  | 4.3 | Medium |  | 
 31705 | CVE-2007-1858 | 2.6 | Low |  | 
-32321 | CVE-2008-0166 | 10 | Critical | Timothy | 
+32321 | CVE-2008-0166 | 10 | Critical | Timothy | X
 33447 | CVE-2008-1447 | 9.4 | High |  | 
 33850 |  | 10 | Critical |  | 
 34460 |  | 7.5 | High |  | 
