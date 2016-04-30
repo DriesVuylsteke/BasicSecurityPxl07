@@ -1,0 +1,38 @@
+C:\Users\Rolf\Desktop\BasicSecurityProject\BasicSecurityProject\bin\Debug\BasicSecurityProject.exe.config
+C:\Users\Rolf\Desktop\BasicSecurityProject\BasicSecurityProject\bin\Debug\BasicSecurityProject.exe
+C:\Users\Rolf\Desktop\BasicSecurityProject\BasicSecurityProject\bin\Debug\BasicSecurityProject.pdb
+C:\Users\Rolf\Desktop\BasicSecurityProject\BasicSecurityProject\obj\Debug\BasicSecurityProject.csprojResolveAssemblyReference.cache
+C:\Users\Rolf\Desktop\BasicSecurityProject\BasicSecurityProject\obj\Debug\HybridEncryptingGrid.baml
+C:\Users\Rolf\Desktop\BasicSecurityProject\BasicSecurityProject\obj\Debug\HybridEncryptingGrid.g.cs
+C:\Users\Rolf\Desktop\BasicSecurityProject\BasicSecurityProject\obj\Debug\MainWindow.g.cs
+C:\Users\Rolf\Desktop\BasicSecurityProject\BasicSecurityProject\obj\Debug\App.g.cs
+C:\Users\Rolf\Desktop\BasicSecurityProject\BasicSecurityProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Rolf\Desktop\BasicSecurityProject\BasicSecurityProject\obj\Debug\BasicSecurityProject_MarkupCompile.cache
+C:\Users\Rolf\Desktop\BasicSecurityProject\BasicSecurityProject\obj\Debug\BasicSecurityProject_MarkupCompile.lref
+C:\Users\Rolf\Desktop\BasicSecurityProject\BasicSecurityProject\obj\Debug\MainWindow.baml
+C:\Users\Rolf\Desktop\BasicSecurityProject\BasicSecurityProject\obj\Debug\BasicSecurityProject.g.resources
+C:\Users\Rolf\Desktop\BasicSecurityProject\BasicSecurityProject\obj\Debug\BasicSecurityProject.Properties.Resources.resources
+C:\Users\Rolf\Desktop\BasicSecurityProject\BasicSecurityProject\obj\Debug\BasicSecurityProject.csproj.GenerateResource.Cache
+C:\Users\Rolf\Desktop\BasicSecurityProject\BasicSecurityProject\obj\Debug\BasicSecurityProject.exe
+C:\Users\Rolf\Desktop\BasicSecurityProject\BasicSecurityProject\obj\Debug\BasicSecurityProject.pdb
+C:\Users\Rolf\Desktop\BasicSecurityProject\BasicSecurityProject\obj\Debug\StenografieGrid.baml
+C:\Users\Rolf\Desktop\BasicSecurityProject\BasicSecurityProject\obj\Debug\StenografieGrid.g.cs
+C:\Users\Rolf\Desktop\School\2e Semester\Basic Security\BasicSecurityProject\BasicSecurityProject\bin\Debug\BasicSecurityProject.exe.config
+C:\Users\Rolf\Desktop\School\2e Semester\Basic Security\BasicSecurityProject\BasicSecurityProject\obj\Debug\BasicSecurityProject.exe
+C:\Users\Rolf\Desktop\School\2e Semester\Basic Security\BasicSecurityProject\BasicSecurityProject\obj\Debug\BasicSecurityProject.pdb
+C:\Users\Rolf\Desktop\School\2e Semester\Basic Security\BasicSecurityProject\BasicSecurityProject\obj\Debug\BasicSecurityProject.csprojResolveAssemblyReference.cache
+C:\Users\Rolf\Desktop\School\2e Semester\Basic Security\BasicSecurityProject\BasicSecurityProject\obj\Debug\StenografieGrid.baml
+C:\Users\Rolf\Desktop\School\2e Semester\Basic Security\BasicSecurityProject\BasicSecurityProject\obj\Debug\HybridEncryptingGrid.baml
+C:\Users\Rolf\Desktop\School\2e Semester\Basic Security\BasicSecurityProject\BasicSecurityProject\obj\Debug\StenografieGrid.g.cs
+C:\Users\Rolf\Desktop\School\2e Semester\Basic Security\BasicSecurityProject\BasicSecurityProject\obj\Debug\HybridEncryptingGrid.g.cs
+C:\Users\Rolf\Desktop\School\2e Semester\Basic Security\BasicSecurityProject\BasicSecurityProject\obj\Debug\MainWindow.g.cs
+C:\Users\Rolf\Desktop\School\2e Semester\Basic Security\BasicSecurityProject\BasicSecurityProject\obj\Debug\App.g.cs
+C:\Users\Rolf\Desktop\School\2e Semester\Basic Security\BasicSecurityProject\BasicSecurityProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Rolf\Desktop\School\2e Semester\Basic Security\BasicSecurityProject\BasicSecurityProject\obj\Debug\BasicSecurityProject_MarkupCompile.cache
+C:\Users\Rolf\Desktop\School\2e Semester\Basic Security\BasicSecurityProject\BasicSecurityProject\obj\Debug\BasicSecurityProject_MarkupCompile.lref
+C:\Users\Rolf\Desktop\School\2e Semester\Basic Security\BasicSecurityProject\BasicSecurityProject\bin\Debug\BasicSecurityProject.exe
+C:\Users\Rolf\Desktop\School\2e Semester\Basic Security\BasicSecurityProject\BasicSecurityProject\bin\Debug\BasicSecurityProject.pdb
+C:\Users\Rolf\Desktop\School\2e Semester\Basic Security\BasicSecurityProject\BasicSecurityProject\obj\Debug\MainWindow.baml
+C:\Users\Rolf\Desktop\School\2e Semester\Basic Security\BasicSecurityProject\BasicSecurityProject\obj\Debug\BasicSecurityProject.g.resources
+C:\Users\Rolf\Desktop\School\2e Semester\Basic Security\BasicSecurityProject\BasicSecurityProject\obj\Debug\BasicSecurityProject.Properties.Resources.resources
+C:\Users\Rolf\Desktop\School\2e Semester\Basic Security\BasicSecurityProject\BasicSecurityProject\obj\Debug\BasicSecurityProject.csproj.GenerateResource.Cache
