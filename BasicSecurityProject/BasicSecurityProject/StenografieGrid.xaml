@@ -4,33 +4,35 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Background="#FFE5E5E5">
     <TabControl x:Name="tabControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <TabItem Header="Encrypteren">
-            <Grid Margin="10,10,10,10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="140"/>
-                    <ColumnDefinition Width="250"/>
-                    <ColumnDefinition Width="2"/>
-                    <ColumnDefinition Width="auto"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="23"/>
-                    <RowDefinition Height="23"/>
-                    <RowDefinition Height="23"/>
-                    <RowDefinition Height="23"/>
-                    <RowDefinition Height="23"/>
-                </Grid.RowDefinitions>
-                <TextBlock Text="Encrypted File: " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" Height="16" Margin="0,4,0,3" Width="80"/>
-                <TextBox x:Name="encryptedFileTextBox" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="0" IsReadOnly="True"/>
-                <Button x:Name="encryptedFileButton" Content="..." HorizontalAlignment="Left" Width="25" Click="encryptedFileButton_Click" Grid.Column="3" Grid.Row="0" Height="23" VerticalAlignment="Bottom"/>
-                <TextBlock Text="Image: " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="3" Height="16" Margin="0,3,0,4" Width="53"/>
-                <TextBox x:Name="imageTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250" Grid.Column="1" Grid.Row="3" IsReadOnly="True"/>
-                <Button x:Name="imageButton" Content="..." HorizontalAlignment="Left" Width="25" Click="imageButton_Click" Grid.Column="3" Grid.Row="3" Height="23" VerticalAlignment="Bottom"/>
-                <TextBlock Text="Encrypted Des Key: " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" Height="16" Margin="0,4,0,3" Width="104"/>
-                <TextBox x:Name="encryptedKeyTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250" VerticalScrollBarVisibility="Auto" IsReadOnly="True" Grid.Column="1" Grid.Row="1"/>
-                <Button x:Name="encryptedKeyButton" Content="..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Click="encryptedKeyButton_Click" Height="23" Grid.Column="3" Grid.Row="1"/>
-                <TextBlock Text="Signed Hash: " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2" Height="16" Margin="0,4,0,3" Width="104"/>
-                <TextBox x:Name="signedHashTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250" VerticalScrollBarVisibility="Auto" IsReadOnly="True" Grid.Column="1" Grid.Row="2"/>
-                <Button x:Name="signedHashButton" Content="..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Click="signedHashButton_Click" Height="23" Grid.Column="3" Grid.Row="2"/>
-                <Button x:Name="embedButton" Content="Embed" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="75" Click="embedButton_Click" Grid.Column="3" Grid.Row="4"/>
+            <Grid Background="#FFE5E5E5">
+                <Grid Margin="10,10,10,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="140"/>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="23"/>
+                        <RowDefinition Height="23"/>
+                        <RowDefinition Height="23"/>
+                        <RowDefinition Height="23"/>
+                        <RowDefinition Height="23"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Encrypted File: " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" Height="16" Margin="0,4,0,3" Width="80"/>
+                    <TextBox x:Name="encryptedFileTextBox" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="0" IsReadOnly="True"/>
+                    <Button x:Name="encryptedFileButton" Content="..." HorizontalAlignment="Left" Width="25" Click="encryptedFileButton_Click" Grid.Column="3" Grid.Row="0" Height="23" VerticalAlignment="Bottom"/>
+                    <TextBlock Text="Image: " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="3" Height="16" Margin="0,3,0,4" Width="53"/>
+                    <TextBox x:Name="imageTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250" Grid.Column="1" Grid.Row="3" IsReadOnly="True"/>
+                    <Button x:Name="imageButton" Content="..." HorizontalAlignment="Left" Width="25" Click="imageButton_Click" Grid.Column="3" Grid.Row="3" Height="23" VerticalAlignment="Bottom"/>
+                    <TextBlock Text="Encrypted Des Key: " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" Height="16" Margin="0,4,0,3" Width="104"/>
+                    <TextBox x:Name="encryptedKeyTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250" VerticalScrollBarVisibility="Auto" IsReadOnly="True" Grid.Column="1" Grid.Row="1"/>
+                    <Button x:Name="encryptedKeyButton" Content="..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Click="encryptedKeyButton_Click" Height="23" Grid.Column="3" Grid.Row="1"/>
+                    <TextBlock Text="Signed Hash: " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2" Height="16" Margin="0,4,0,3" Width="104"/>
+                    <TextBox x:Name="signedHashTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250" VerticalScrollBarVisibility="Auto" IsReadOnly="True" Grid.Column="1" Grid.Row="2"/>
+                    <Button x:Name="signedHashButton" Content="..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Click="signedHashButton_Click" Height="23" Grid.Column="3" Grid.Row="2"/>
+                    <Button x:Name="embedButton" Content="Embed" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="75" Click="embedButton_Click" Grid.Column="3" Grid.Row="4"/>
+                </Grid>
             </Grid>
         </TabItem>
         <TabItem Header="Decrypteren">

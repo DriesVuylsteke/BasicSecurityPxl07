@@ -73,7 +73,7 @@ namespace BasicSecurityProject
 
             if (!(string.IsNullOrWhiteSpace(encryptedFile) || string.IsNullOrWhiteSpace(encryptedDesKey) || string.IsNullOrWhiteSpace(signedHashFile)) || string.IsNullOrWhiteSpace(image))
             {
-                Thread t = new Thread(() => StenografieUtility.embed(encryptedFile, encryptedDesKey, signedHashFile, new BitmapImage(new Uri(image))));
+                Thread t = new Thread(() => StenografieUtility.embed(encryptedFile, encryptedDesKey, signedHashFile, image));
                 t.Start();
             }
             else
@@ -108,7 +108,7 @@ namespace BasicSecurityProject
 
             if (!(string.IsNullOrWhiteSpace(embeddedImage) || string.IsNullOrWhiteSpace(decryptionFolder)))
             {
-                Thread t = new Thread(() => StenografieUtility.decodePicture(new BitmapImage(new Uri(embeddedImage)), decryptionFolder + "Encrypted.file", decryptionFolder + "Des.rsa", decryptionFolder + "Hash.signature"));
+                Thread t = new Thread(() => StenografieUtility.decodePicture(embeddedImage, decryptionFolder + "Encrypted.file", decryptionFolder + "Des.rsa", decryptionFolder + "Hash.signature"));
                 t.Start();
             }
             else

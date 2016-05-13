@@ -10,8 +10,10 @@ namespace BasicSecurityProject
 {
     class StenografieUtility
     {
-        public static void decodePicture(BitmapSource image, string messageFile, string keyFile, string hashFile)
+        public static void decodePicture(string imageLocation, string messageFile, string keyFile, string hashFile)
         {
+            BitmapDecoder decoder = new BmpBitmapDecoder(new Uri(imageLocation), BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.Default);
+            BitmapSource image = decoder.Frames[0];
             int stride = image.PixelWidth * 4;
             Byte[] pixels = new Byte[image.PixelHeight * stride];
             Byte[] decode = new Byte[image.PixelHeight * stride / 4];
@@ -46,58 +48,68 @@ namespace BasicSecurityProject
             byte[] key = new byte[lenght2];
             byte[] hash = new byte[lenght3];
             Array.Copy(decode, 12, message, 0, lenght1);
-            Array.Copy(decode, 12 + lenght1, message, 0, lenght2);
-            Array.Copy(decode, 12 + lenght1 + lenght2, message, 0, lenght3);
+            Array.Copy(decode, 12 + lenght1, key, 0, lenght2);
+            Array.Copy(decode, 12 + lenght1 + lenght2, hash, 0, lenght3);
             File.WriteAllBytes(messageFile, message);
-            File.WriteAllBytes(keyFile, message);
-            File.WriteAllBytes(hashFile, message);
+            File.WriteAllBytes(keyFile, key);
+            File.WriteAllBytes(hashFile, hash);
         }
 
-        public static BitmapSource embed(string file, string key, string hash, BitmapSource bmp)
+        public static void embed(string file, string key, string hash, string imageLocation)
         {
-            Byte[] fileB = File.ReadAllBytes(file);
-            Byte[] fileK = File.ReadAllBytes(key);
-            Byte[] fileH = File.ReadAllBytes(hash);
+            BitmapSource bmp = new BitmapImage(new Uri(imageLocation));
+            
 
-            Byte[] toEmbed = new byte[12 + fileB.Length + fileK.Length + fileH.Length];
-            Array.Copy(BitConverter.GetBytes(fileB.Length), toEmbed, 4);
-            Array.Copy(BitConverter.GetBytes(fileK.Length), 0, toEmbed, 4, 4);
-            Array.Copy(BitConverter.GetBytes(fileH.Length), 0, toEmbed, 8, 4);
 
-            Array.Copy(fileB, 0, toEmbed, 12, fileB.Length);
-            Array.Copy(fileK, 0, toEmbed, 12 + fileB.Length, fileK.Length);
-            Array.Copy(fileH, 0, toEmbed, 12 + fileB.Length + fileK.Length, fileH.Length);
+                Byte[] fileB = File.ReadAllBytes(file);
+                Byte[] fileK = File.ReadAllBytes(key);
+                Byte[] fileH = File.ReadAllBytes(hash);
 
-            int total = fileB.Length + fileK.Length + fileH.Length + 12;
-            int stride = bmp.PixelWidth * 4;
-            byte[] pixels = new byte[bmp.PixelHeight * stride];
-            int pixCounter = 0;
-            bmp.CopyPixels(pixels, stride, 0);
+                Byte[] toEmbed = new byte[12 + fileB.Length + fileK.Length + fileH.Length];
+                Array.Copy(BitConverter.GetBytes(fileB.Length), toEmbed, 4);
+                Array.Copy(BitConverter.GetBytes(fileK.Length), 0, toEmbed, 4, 4);
+                Array.Copy(BitConverter.GetBytes(fileH.Length), 0, toEmbed, 8, 4);
 
-            // pass through the rows
-            for (int i = 0; i < bmp.PixelHeight && pixCounter < total; i++)
-            {
-                // pass through each row
-                for (int j = 0; j < bmp.PixelWidth && pixCounter < total; j++)
+                Array.Copy(fileB, 0, toEmbed, 12, fileB.Length);
+                Array.Copy(fileK, 0, toEmbed, 12 + fileB.Length, fileK.Length);
+                Array.Copy(fileH, 0, toEmbed, 12 + fileB.Length + fileK.Length, fileH.Length);
+
+                int total = fileB.Length + fileK.Length + fileH.Length + 12;
+                int stride = bmp.PixelWidth * 4;
+                byte[] pixels = new byte[bmp.PixelHeight * stride];
+                int pixCounter = 0;
+                bmp.CopyPixels(pixels, stride, 0);
+
+                // pass through the rows
+                for (int i = 0; i < bmp.PixelHeight && pixCounter < total; i++)
                 {
-                    int index = i * stride + 4 * j;
-                    // RGBA value positions of pixel
-                    // R = pixels[index];
-                    // G = pixels[index + 1];
-                    // B = pixels[index + 2];
-                    // A = pixels[index + 3];
-                    // now, replace the LSB with the next value to hide
+                    // pass through each row
+                    for (int j = 0; j < bmp.PixelWidth && pixCounter < total; j++)
+                    {
+                        int index = i * stride + 4 * j;
+                        // RGBA value positions of pixel
+                        // R = pixels[index];
+                        // G = pixels[index + 1];
+                        // B = pixels[index + 2];
+                        // A = pixels[index + 3];
+                        // now, replace the LSB with the next value to hide
 
-                    // store 1 byte in every pixel (2 bit in R G B and A)
-                    pixels[index] = (byte)(((byte)(toEmbed[pixCounter] & 3) >> 0) + (pixels[index]&252));
-                    pixels[index + 1] = (byte)(((byte)(toEmbed[pixCounter] & 12) >> 2) + (pixels[index] & 252));
-                    pixels[index + 2] = (byte)(((byte)(toEmbed[pixCounter] & 48) >> 4) + (pixels[index] & 252));
-                    pixels[index + 3] = (byte)(((byte)(toEmbed[pixCounter] & 192) >> 6) + (pixels[index] & 252));
-                    pixCounter++;
+                        // store 1 byte in every pixel (2 bit in R G B and A)
+                        pixels[index] = (byte)(((byte)(toEmbed[pixCounter] & 3) >> 0) + (pixels[index] & 252));
+                        pixels[index + 1] = (byte)(((byte)(toEmbed[pixCounter] & 12) >> 2) + (pixels[index] & 252));
+                        pixels[index + 2] = (byte)(((byte)(toEmbed[pixCounter] & 48) >> 4) + (pixels[index] & 252));
+                        pixels[index + 3] = (byte)(((byte)(toEmbed[pixCounter] & 192) >> 6) + (pixels[index] & 252));
+                        pixCounter++;
+                    }
                 }
+                BitmapSource src = BitmapSource.Create(bmp.PixelWidth, bmp.PixelHeight, bmp.DpiX, bmp.DpiY, bmp.Format, bmp.Palette, pixels, stride);
+            using (var fileStream = new FileStream(Path.GetDirectoryName(imageLocation)+"\\embedded.bmp", FileMode.Create))
+            {
+                BitmapEncoder encoder = new BmpBitmapEncoder();
+                encoder.Frames.Add(BitmapFrame.Create(src));
+                encoder.Save(fileStream);
             }
-            BitmapSource src = BitmapSource.Create(bmp.PixelWidth, bmp.PixelHeight, bmp.DpiX, bmp.DpiY, bmp.Format, bmp.Palette, pixels, stride);
-            return src;
+            Console.WriteLine("Geslaagd");
 
             //not needed
             // Create a bitmap image from the bitmap source
