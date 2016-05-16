@@ -1,0 +1,12 @@
+HOW TO:
+
+-> Open Armitage
+	-> Wanneer er geen connectie gemaakt kan worden open de terminal en 		voer volgend commando uit:
+		sudo /etc/init.d/postgresql start
+-> Voeg een nieuwe host toe
+	-> Hosts -> Add Hosts
+-> 'Attacks' zoeken die kunnen worden toegepast op de host
+	-> Attacks -> Find Attacks
+-> 'Attack' uitvoeren
+	Rechter muisknop op de host -> Attack -> ..
+-> Wanneer een 'attack' gelukt is zal je host er zo uit zien. En zal er een nieuwe shell openen.
