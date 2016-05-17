@@ -16,3 +16,7 @@
   - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0166
   - https://www.openssl.org/
   - https://www.freebsd.org/doc/nl_NL.ISO8859-1/books/handbook/openssl.html
+
+
+- https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2075
+- https://www.unrealircd.org/
