@@ -1,0 +1,19 @@
+﻿<Grid x:Class="Basic_Security_AppDev.RSA"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      Margin="10,10,10,10" Width="475" Height="225">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="150"/>
+        <ColumnDefinition Width="250"/>
+        <ColumnDefinition Width="75"/>
+    </Grid.ColumnDefinitions>
+    <Label Content="To folder:" Grid.Row="0" Grid.Column="0"/>
+    <TextBox Name="folderTextBox" Grid.Row="0" Grid.Column="1" VerticalContentAlignment="Center"/>
+    <Button Name="folderButton" Content="..." Grid.Row="0" Grid.Column="2" Height="25" VerticalAlignment="Top" Click="folderButton_Click"/>
+    <Button Name="createButton" Content="Create Pair" Grid.Row="1" Grid.Column="2" Click="createButton_Click"/>
+</Grid>

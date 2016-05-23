@@ -30,11 +30,7 @@ namespace BasicSecurityProject
         //DesEncryption
         private void fileButton_Click(object sender, RoutedEventArgs e)
         {
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-            if (dlg.ShowDialog() == true)
-            {
-                fileTextBox.Text = dlg.FileName;
-            }
+
         }
 
         private void folderButton_Click(object sender, RoutedEventArgs e)
