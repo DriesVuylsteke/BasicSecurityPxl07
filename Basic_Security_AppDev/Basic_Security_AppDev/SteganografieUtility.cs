@@ -91,10 +91,10 @@ namespace Basic_Security_AppDev
             bmp.CopyPixels(pixels, stride, 0);
 
             // pass through the rows
-            for (int i = 0; i < bmp.PixelHeight && pixCounter < total -1; i++)
+            for (int i = 0; i < bmp.PixelHeight && pixCounter < total; i++)
             {
                 // pass through each row
-                for (int j = 0; j < bmp.PixelWidth && pixCounter < total -1; j++)
+                for (int j = 0; j < bmp.PixelWidth && pixCounter < total; j++)
                 {
                     int index = i * stride + 4 * j;
                     // RGBA value positions of pixel
@@ -105,7 +105,7 @@ namespace Basic_Security_AppDev
                     // now, replace the LSB with the next value to hide
 
                     // store 1 byte in every pixel (2 bit in R G B and A)
-                    for(int pixIndex = 0; pixIndex < 3; pixIndex++)
+                    for(int pixIndex = 0; pixIndex < 3 && pixCounter < toEmbed.Length; pixIndex++)
                     {
                         pixels[index+pixIndex] = (byte)(((byte)(toEmbed[pixCounter] & GetAndFromBitCounter(bitCounter)) >> bitCounter) + (pixels[index+pixIndex] & 252));
                         if (bitCounter >= 6)
