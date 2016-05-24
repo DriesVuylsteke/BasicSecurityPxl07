@@ -62,7 +62,7 @@
     <Compile Include="Decrypteren .xaml.cs">
       <DependentUpon>Decrypteren .xaml</DependentUpon>
     </Compile>
-    <Compile Include="RsaUtility.cs" />
+    <Compile Include="RSAUtility.cs" />
     <Compile Include="SteganografieUtility.cs" />
     <Page Include="RSA.xaml">
       <Generator>MSBuild:Compile</Generator>

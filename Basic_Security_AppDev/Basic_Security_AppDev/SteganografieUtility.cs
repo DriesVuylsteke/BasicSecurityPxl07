@@ -91,10 +91,10 @@ namespace Basic_Security_AppDev
             bmp.CopyPixels(pixels, stride, 0);
 
             // pass through the rows
-            for (int i = 0; i < bmp.PixelHeight && pixCounter < total-1; i++)
+            for (int i = 0; i < bmp.PixelHeight && pixCounter < total -1; i++)
             {
                 // pass through each row
-                for (int j = 0; j < bmp.PixelWidth && pixCounter < total-1; j++)
+                for (int j = 0; j < bmp.PixelWidth && pixCounter < total -1; j++)
                 {
                     int index = i * stride + 4 * j;
                     // RGBA value positions of pixel

@@ -83,44 +83,62 @@ namespace Basic_Security_AppDev
                 string folder = folderTextBox.Text;
                 string myPrivateKeyFile = myPrivateKeyFileTextBox.Text;
                 string sendersPublicKeyFile = sendersPublicKeyFileTextBox.Text;
-
+                
                 if (((bool)steganografieCheckBox.IsChecked && !File.Exists(image)) || (!(bool)steganografieCheckBox.IsChecked &&  (!File.Exists(encryptedFile) || !File.Exists(encryptedDesKeyFile) || !File.Exists(signedHashFile))) || !Directory.Exists(folder) ||!File.Exists(myPrivateKeyFile) || !File.Exists(sendersPublicKeyFile))
                 {
                     System.Windows.MessageBox.Show("Een van bovenstaande waarden is incorrect!");
                 }
                 else
                 {
+                    // 1.1. encrypted files uit afbeelding halen (steganografie)
                     if ((bool)steganografieCheckBox.IsChecked)
                     {
-                        SteganografieUtility.decodePicture(image,folder+"\\Encrypted.des",folder+"\\Des.rsa",folder+"\\Hah.signed");
+                        SteganografieUtility.decodePicture(image,folder+"\\Encrypted.des",folder+"\\Des.rsa",folder+"\\Hash.signed");
                         encryptedFile = folder + "\\Encrypted.des";
                         encryptedDesKeyFile = folder + "\\Des.rsa";
                         signedHashFile = folder + "\\Hash.signed";
                     }
 
+                    // 2.1. Des.rsa decrypten
                     RSAUtility.DecryptFile(encryptedDesKeyFile, myPrivateKeyFile, folder + "\\Des.key");
 
-                    StreamReader encryptedKeysr = new StreamReader(folder + "\\Des.key");
-                    string fileName = encryptedKeysr.ReadLine();
-                    string desKey = encryptedKeysr.ReadLine();
-                    encryptedKeysr.Close();
-                    
+                    // 2.2. dessleutel en filename uit Des.key halen
+                    StreamReader encryptedKeySR = new StreamReader(folder + "\\Des.key");
+                    string fileName = encryptedKeySR.ReadLine();
+                    string desKey = encryptedKeySR.ReadLine();
+                    encryptedKeySR.Close();
+                    //File.Delete(folder + "\\Des.rsa");
+
+                    // 3.1. Encrypted.des decrypteren met desKey
                     DesUtility.DecryptFile(encryptedFile, desKey, folder + "\\" + fileName);
 
-                    RSAUtility.Hash(folder + "\\" + fileName, folder + "\\Hash.hash");
-                    if (!RSAUtility.checkSignature(sendersPublicKeyFile, signedHashFile, folder + "\\Hash.hash"))
+                    // 4.1. Hash maken van decrypted file
+                    RSAUtility.Hash(folder + "\\" + fileName, folder + "\\" + fileName + ".hash");
+                    // 4.2. Hashes controleren
+                    if(!RSAUtility.CompareHashes(sendersPublicKeyFile,signedHashFile, folder + "\\" + fileName + ".hash"))
                     {
                         System.Windows.MessageBox.Show("Hashes komen niet overeen!", "Foutmelding");
-                        File.Delete(folder + "\\Des.key");
-                        File.Delete(folder + "\\" + fileName);
                     }
-                    File.Delete(folder + "\\Hash.hash");
-                    File.Delete(folder + "\\Des.key");
-                    System.Windows.MessageBox.Show("Succesfully Decrypted!", "Succes");
+                    else
+                    {
+                        System.Windows.MessageBox.Show("Hashes komen overeen!");
+                    }
 
-                    File.Delete(folder + "\\Des.rsa");
-                    File.Delete(folder + "\\Encrypted.des");
-                    File.Delete(folder + "\\Hash.Signed");
+
+                    //RSAUtility.Hash(folder + "\\" + fileName, folder + "\\Hash.hash");
+                    //if (!RSAUtility.checkSignature(sendersPublicKeyFile, signedHashFile, folder + "\\Hash.hash"))
+                    //{
+                        
+                    //    //File.Delete(folder + "\\Des.key");
+                    //    //File.Delete(folder + "\\" + fileName);
+                    //}
+                    //File.Delete(folder + "\\Hash.hash");
+                    //File.Delete(folder + "\\Des.key");
+                    //System.Windows.MessageBox.Show("Succesfully Decrypted!", "Succes");
+
+                    //File.Delete(folder + "\\Des.rsa");
+                    //File.Delete(folder + "\\Encrypted.des");
+                    //File.Delete(folder + "\\Hash.signed");
                 }
             }
             catch (Exception ex)

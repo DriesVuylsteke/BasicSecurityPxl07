@@ -60,34 +60,6 @@ namespace Basic_Security_AppDev
             }
         } // Keys
 
-        public static bool compareHash(string file1, string file2)
-        {
-            StreamReader file1Reader = null;
-            StreamReader file2Reader = null;
-            byte[] hash1 = null;
-            byte[] hash2 = null;
-            try
-            {
-                //Open files for reading
-                file1Reader = File.OpenText(file1);
-                file2Reader = File.OpenText(file2);
-                hash1 = Encoding.Unicode.GetBytes(file1Reader.ReadToEnd());
-                hash2 = Encoding.Unicode.GetBytes(file2Reader.ReadToEnd());
-                return hash1 == hash2;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-
-                file1Reader.Close();
-                file2Reader.Close();
-            }
-            return false;
-        }
-
         //hash a file
         public static void Hash(string fileToHash, string hashedFile)
         {
@@ -109,7 +81,7 @@ namespace Basic_Security_AppDev
             }
         }
 
-        //Sign a hash with a private key
+        //Sign a File with a private key
         public static void SignHash(string privateKey, string fileToSign, string signedFile)
         {
             try
@@ -145,7 +117,7 @@ namespace Basic_Security_AppDev
         }
 
         //Remove a signature with the public key
-        public static bool checkSignature(string publicKey, string signedFile, string hash)
+        public static bool CompareHashes(string publicKey, string signedFile, string hash)
         {
             try
             {

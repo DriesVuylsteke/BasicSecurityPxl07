@@ -76,7 +76,8 @@ namespace Basic_Security_AppDev
 
         private void encryptButton_Click(object sender, RoutedEventArgs e)
         {
-            //try {
+            try
+            {
                 string file = fileTextBox.Text;
                 string folder = folderTextBox.Text;
                 string desKey = desTextBox.Text;
@@ -90,44 +91,46 @@ namespace Basic_Security_AppDev
                 }
                 else
                 {
+                    //// 1.1. Hash maken van file
+                    //RSAUtility.Hash(file, folder + "\\Hash.hash");
+                    // 1.2. Hash signen met private key sender (RSA)
+                    RSAUtility.SignHash(myPrivateKey, file, folder + "\\Hash.signed");
+                    //File.Delete(folder + "\\Hash.hash");
+
+                    // 2.1. File encrypteren met des sleutel
                     DesUtility.EncryptFile(file, desKey, folder + "\\Encrypted.des");
 
+                    // 3.1. file maken met deskey en filename in
                     StreamWriter generatedKey = new StreamWriter(folder + "\\Des.key");
                     string fileName = System.IO.Path.GetFileName(file);
                     generatedKey.WriteLine(fileName);
                     generatedKey.WriteLine(desKey);
                     generatedKey.Flush();
                     generatedKey.Close();
-
+                    // 3.2. bovenstaande file encrypteren met public key receiver (RSA)
                     RSAUtility.EncryptFile(folder + "\\Des.key", receiversPublicKey, folder + "\\Des.rsa");
-                    File.Delete(folder + "\\Des.key");
+                    //File.Delete(folder + "\\Des.key");
 
-                    RSAUtility.SignHash(myPrivateKey, file, folder + "\\Hash.signed");
-
+                    // 4.1. steganografie toepassen
                     if ((bool)steganografieCheckBox.IsChecked)
                     {
                         SteganografieUtility.embed(folder + "\\Encrypted.des", folder + "\\Des.rsa", folder + "\\Hash.signed", image, folder);
-                        File.Delete(folder + "\\Encrypted.des");
-                        File.Delete(folder + "\\Des.rsa");
-                        File.Delete(folder + "\\Hash.signed");
+                        //File.Delete(folder + "\\Encrypted.des");
+                        //File.Delete(folder + "\\Des.rsa");
+                        //File.Delete(folder + "\\Hash.signed");
                     }
 
                     System.Windows.MessageBox.Show("Succesfully Encrypted!", "Succes");
-                    fileTextBox.Clear();
-                    folderTextBox.Clear();
-                    desTextBox.Clear();
-                    myPrivateKeyFileTextBox.Clear();
-                    receiversPublicKeyFileTextBox.Clear();
-                    steganografieCheckBox.IsChecked = false;
-                    imageTextBox.Clear();
+                    ClearFields();
                 }
-            //} catch(Exception ex)
-            //{
-             //   System.Windows.MessageBox.Show(ex.Message, "Error!");
-            //}
         }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Error!");
+            }
+}
 
-        private string SelectFile(string filter=null)
+        private string SelectFile(string filter = null)
         {
             string path = null;
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -158,6 +161,17 @@ namespace Basic_Security_AppDev
             imageTextBox.Text = string.Empty;
             imageTextBox.IsEnabled = !imageTextBox.IsEnabled;
             imageButton.IsEnabled = !imageButton.IsEnabled;
+        }
+
+        private void ClearFields()
+        {
+            fileTextBox.Clear();
+            folderTextBox.Clear();
+            desTextBox.Clear();
+            myPrivateKeyFileTextBox.Clear();
+            receiversPublicKeyFileTextBox.Clear();
+            steganografieCheckBox.IsChecked = false;
+            imageTextBox.Clear();
         }
     }
 }
