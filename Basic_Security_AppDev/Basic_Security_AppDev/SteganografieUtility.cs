@@ -19,20 +19,27 @@ namespace Basic_Security_AppDev
             Byte[] decode = new Byte[image.PixelHeight * stride / 4];
             image.CopyPixels(pixels, stride, 0);
             int pixCounter = 0;
-
+            int bitCounter = 0;
+            byte b = 0;
             // read the entire message, 1 byte per pixel
             for (int i = 0; i < image.PixelHeight; i++)
             {
                 for (int j = 0; j < image.PixelWidth; j++)
                 {
-                    int index = i * stride + 4 * j;
-                    byte b = 0;
-                    b = (byte)(b + (pixels[index] & 3));
-                    b = (byte)(b + ((pixels[index + 1] & 3) << 2));
-                    b = (byte)(b + ((pixels[index + 2] & 3) << 4));
-                    b = (byte)(b + ((pixels[index + 3] & 3) << 6));
-                    decode[pixCounter] = b;
-                    pixCounter++;
+                    int index = i * stride + 4 * j;            
+                    for(int pixIndex = 0; pixIndex < 3; pixIndex++)
+                    {
+                        b = (byte)(b + ((pixels[index+pixIndex] & 3) << bitCounter));
+                        if (bitCounter == 6)
+                        {
+                            bitCounter = 0;
+                            decode[pixCounter] = b;
+                            pixCounter++;
+                            b = 0;
+                        }
+                        else
+                            bitCounter += 2;
+                    }       
                 }
             }
 
@@ -66,7 +73,9 @@ namespace Basic_Security_AppDev
             Byte[] fileH = File.ReadAllBytes(hash);
 
             Byte[] toEmbed = new byte[12 + fileB.Length + fileK.Length + fileH.Length];
-            Array.Copy(BitConverter.GetBytes(fileB.Length), toEmbed, 4);
+            Byte[] test = BitConverter.GetBytes(fileB.Length);
+            Array.Copy(test, toEmbed, 4);
+            int testInt = BitConverter.ToInt32(test, 0);
             Array.Copy(BitConverter.GetBytes(fileK.Length), 0, toEmbed, 4, 4);
             Array.Copy(BitConverter.GetBytes(fileH.Length), 0, toEmbed, 8, 4);
 
@@ -78,13 +87,14 @@ namespace Basic_Security_AppDev
             int stride = bmp.PixelWidth * 4;
             byte[] pixels = new byte[bmp.PixelHeight * stride];
             int pixCounter = 0;
+            int bitCounter = 0;
             bmp.CopyPixels(pixels, stride, 0);
 
             // pass through the rows
-            for (int i = 0; i < bmp.PixelHeight && pixCounter < total; i++)
+            for (int i = 0; i < bmp.PixelHeight && pixCounter < total-1; i++)
             {
                 // pass through each row
-                for (int j = 0; j < bmp.PixelWidth && pixCounter < total; j++)
+                for (int j = 0; j < bmp.PixelWidth && pixCounter < total-1; j++)
                 {
                     int index = i * stride + 4 * j;
                     // RGBA value positions of pixel
@@ -95,11 +105,17 @@ namespace Basic_Security_AppDev
                     // now, replace the LSB with the next value to hide
 
                     // store 1 byte in every pixel (2 bit in R G B and A)
-                    pixels[index] = (byte)(((byte)(toEmbed[pixCounter] & 3) >> 0) + (pixels[index] & 252));
-                    pixels[index + 1] = (byte)(((byte)(toEmbed[pixCounter] & 12) >> 2) + (pixels[index] & 252));
-                    pixels[index + 2] = (byte)(((byte)(toEmbed[pixCounter] & 48) >> 4) + (pixels[index] & 252));
-                    pixels[index + 3] = (byte)(((byte)(toEmbed[pixCounter] & 192) >> 6) + (pixels[index] & 252));
-                    pixCounter++;
+                    for(int pixIndex = 0; pixIndex < 3; pixIndex++)
+                    {
+                        pixels[index+pixIndex] = (byte)(((byte)(toEmbed[pixCounter] & GetAndFromBitCounter(bitCounter)) >> bitCounter) + (pixels[index+pixIndex] & 252));
+                        if (bitCounter >= 6)
+                        {
+                            bitCounter = 0;
+                            pixCounter++;
+                        }
+                        else
+                            bitCounter += 2;
+                    }
                 }
             }
             BitmapSource src = BitmapSource.Create(bmp.PixelWidth, bmp.PixelHeight, bmp.DpiX, bmp.DpiY, bmp.Format, bmp.Palette, pixels, stride);
@@ -110,6 +126,21 @@ namespace Basic_Security_AppDev
                 encoder.Save(fileStream);
             }
             Console.WriteLine("Geslaagd");
+        }
+
+        private static int GetAndFromBitCounter(int bitCounter)
+        {
+            switch (bitCounter)
+            {
+                case 0:
+                    return 3;
+                case 2:
+                    return 12;
+                case 4:
+                    return 48;
+                default:
+                    return 192;
+            }
         }
     }
 }

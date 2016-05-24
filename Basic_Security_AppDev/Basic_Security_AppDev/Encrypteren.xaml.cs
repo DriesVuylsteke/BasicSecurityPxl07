@@ -76,7 +76,7 @@ namespace Basic_Security_AppDev
 
         private void encryptButton_Click(object sender, RoutedEventArgs e)
         {
-            try {
+            //try {
                 string file = fileTextBox.Text;
                 string folder = folderTextBox.Text;
                 string desKey = desTextBox.Text;
@@ -121,10 +121,10 @@ namespace Basic_Security_AppDev
                     steganografieCheckBox.IsChecked = false;
                     imageTextBox.Clear();
                 }
-            } catch(Exception ex)
-            {
-                System.Windows.MessageBox.Show(ex.Message, "Error!");
-            }
+            //} catch(Exception ex)
+            //{
+             //   System.Windows.MessageBox.Show(ex.Message, "Error!");
+            //}
         }
 
         private string SelectFile(string filter=null)
