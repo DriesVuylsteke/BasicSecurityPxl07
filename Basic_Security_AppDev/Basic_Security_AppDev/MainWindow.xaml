@@ -8,12 +8,12 @@
         Title="Hybrid Encrypting + Steganografie" Height="350" Width="525">
     <Grid>
         <TabControl>
-            <TabItem Header="Encrypteren">
+            <TabItem Header="Encrypt">
                 <Grid Background="#FFE5E5E5">
                     <local:Encrypteren/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Decrypteren">
+            <TabItem Header="Decrypt">
                 <Grid Background="#FFE5E5E5">
                     <local:Decrypteren/>
                 </Grid>

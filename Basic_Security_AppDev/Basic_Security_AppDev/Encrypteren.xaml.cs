@@ -109,15 +109,15 @@ namespace Basic_Security_AppDev
                     generatedKey.Close();
                     // 3.2. bovenstaande file encrypteren met public key receiver (RSA)
                     RSAUtility.EncryptFile(folder + "\\Des.key", receiversPublicKey, folder + "\\Des.rsa");
-                    //File.Delete(folder + "\\Des.key");
+                    File.Delete(folder + "\\Des.key");
 
                     // 4.1. steganografie toepassen
                     if ((bool)steganografieCheckBox.IsChecked)
                     {
                         SteganografieUtility.embed(folder + "\\Encrypted.des", folder + "\\Des.rsa", folder + "\\Hash.signed", image, folder);
-                        //File.Delete(folder + "\\Encrypted.des");
-                        //File.Delete(folder + "\\Des.rsa");
-                        //File.Delete(folder + "\\Hash.signed");
+                        File.Delete(folder + "\\Encrypted.des");
+                        File.Delete(folder + "\\Des.rsa");
+                        File.Delete(folder + "\\Hash.signed");
                     }
 
                     System.Windows.MessageBox.Show("Succesfully Encrypted!", "Succes");

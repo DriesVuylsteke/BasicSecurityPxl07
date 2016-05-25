@@ -33,7 +33,7 @@
     <Label Content="Receivers Public key file:" Grid.Row="4" Grid.Column="0"/>
     <TextBox Name="receiversPublicKeyFileTextBox" Grid.Row="4" Grid.Column="1" VerticalContentAlignment="Center"/>
     <Button Name="receiversPublicKeyFileButton" Content="..." Grid.Row="4" Grid.Column="2" Click="receiversPublicKeyFileButton_Click"/>
-    <Label Content="Steganografie:" Grid.Row="5" Grid.Column="0"/>
+    <Label Content="Steganography:" Grid.Row="5" Grid.Column="0"/>
     <CheckBox Name="steganografieCheckBox" Grid.Row="5" Grid.Column="1" VerticalContentAlignment="Center" Checked="steganografieCheckBox_Checked" Unchecked="steganografieCheckBox_Unchecked" />
     <Label Content="Image:" Grid.Row="6" Grid.Column="0"/>
     <TextBox Name="imageTextBox" Grid.Row="6" Grid.Column="1" VerticalContentAlignment="Center" IsEnabled="False"/>

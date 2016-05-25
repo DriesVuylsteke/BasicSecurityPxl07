@@ -19,7 +19,7 @@
         <ColumnDefinition Width="250"/>
         <ColumnDefinition Width="75"/>
     </Grid.ColumnDefinitions>
-    <Label Content="Steganografie:" Grid.Row="0" Grid.Column="0"/>
+    <Label Content="Steganography:" Grid.Row="0" Grid.Column="0"/>
     <CheckBox Name="steganografieCheckBox" Grid.Row="0" Grid.Column="1" VerticalContentAlignment="Center" Checked="steganografieCheckBox_Checked" Unchecked="steganografieCheckBox_Unchecked"/>
     <Label Content="Image:" Grid.Row="1" Grid.Column="0"/>
     <TextBox Name="imageTextBox" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" IsEnabled="False"/>

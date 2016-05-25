@@ -115,30 +115,17 @@ namespace Basic_Security_AppDev
                     // 4.1. Hash maken van decrypted file
                     RSAUtility.Hash(folder + "\\" + fileName, folder + "\\" + fileName + ".hash");
                     // 4.2. Hashes controleren
-                    if(!RSAUtility.CompareHashes(sendersPublicKeyFile,signedHashFile, folder + "\\" + fileName + ".hash"))
+                    if (!RSAUtility.CompareHashes(sendersPublicKeyFile, signedHashFile, folder + "\\" + fileName + ".hash"))
                     {
+                        CleanFiles(folder,fileName);
                         System.Windows.MessageBox.Show("Hashes komen niet overeen!", "Foutmelding");
                     }
                     else
                     {
-                        System.Windows.MessageBox.Show("Hashes komen overeen!");
+                        CleanFiles(folder, fileName);
+                        System.Windows.MessageBox.Show("Succesfully Decrypted!", "Succes");
+                        ClearFields();
                     }
-
-
-                    //RSAUtility.Hash(folder + "\\" + fileName, folder + "\\Hash.hash");
-                    //if (!RSAUtility.checkSignature(sendersPublicKeyFile, signedHashFile, folder + "\\Hash.hash"))
-                    //{
-                        
-                    //    //File.Delete(folder + "\\Des.key");
-                    //    //File.Delete(folder + "\\" + fileName);
-                    //}
-                    //File.Delete(folder + "\\Hash.hash");
-                    //File.Delete(folder + "\\Des.key");
-                    //System.Windows.MessageBox.Show("Succesfully Decrypted!", "Succes");
-
-                    //File.Delete(folder + "\\Des.rsa");
-                    //File.Delete(folder + "\\Encrypted.des");
-                    //File.Delete(folder + "\\Hash.signed");
                 }
             }
             catch (Exception ex)
@@ -188,6 +175,28 @@ namespace Basic_Security_AppDev
             signedHashFileTextBox.IsEnabled = !signedHashFileTextBox.IsEnabled;
             signedHashFileButton.IsEnabled = !signedHashFileButton.IsEnabled;
 
+        }
+
+        private void CleanFiles(string folder, string fileName)
+        {
+            File.Delete(folder + "\\Des.key");
+            File.Delete(folder + "\\Des.rsa");
+            File.Delete(folder + "\\Encrypted.des");
+            File.Delete(folder + "\\Hash.signed");
+            File.Delete(folder + "\\" + fileName + ".hash");
+        }
+
+
+        private void ClearFields()
+        {
+            steganografieCheckBox.IsChecked = false;
+            imageTextBox.Clear();
+            encryptedFileTextBox.Clear();
+            encryptedDesKeyFileTextBox.Clear();
+            signedHashFileTextBox.Clear();
+            folderTextBox.Clear();
+            myPrivateKeyFileTextBox.Clear();
+            sendersPublicKeyFileTextBox.Clear();
         }
     }
 }

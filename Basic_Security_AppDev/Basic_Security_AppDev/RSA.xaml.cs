@@ -40,7 +40,11 @@ namespace Basic_Security_AppDev
                 if (!Directory.Exists(keyFolder))
                     System.Windows.MessageBox.Show("Een van bovenstaande waarden is incorrect!");
                 else
+                {
                     RSAUtility.Keys(keyFolder);
+                    folderTextBox.Clear();
+                    System.Windows.MessageBox.Show("Your keypair has been created!");
+                }
             }
             catch(Exception ex)
             {
