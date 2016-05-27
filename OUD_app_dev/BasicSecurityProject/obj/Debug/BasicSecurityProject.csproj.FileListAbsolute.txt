@@ -55,3 +55,6 @@ C:\Users\Rolf\Desktop\School\2e Semester\Basic Security\BasicSecurityPxl07\Basic
 C:\Users\Rolf\Desktop\School\2e Semester\Basic Security\BasicSecurityPxl07\BasicSecurityProject\BasicSecurityProject\obj\Debug\BasicSecurityProject.g.resources
 C:\Users\Rolf\Desktop\School\2e Semester\Basic Security\BasicSecurityPxl07\BasicSecurityProject\BasicSecurityProject\obj\Debug\BasicSecurityProject.Properties.Resources.resources
 C:\Users\Rolf\Desktop\School\2e Semester\Basic Security\BasicSecurityPxl07\BasicSecurityProject\BasicSecurityProject\obj\Debug\BasicSecurityProject.csproj.GenerateResource.Cache
+C:\Users\dries\OneDrive\2TIN\Semester 2\security\BasicSecurityPxl07\BasicSecurityProject\BasicSecurityProject\bin\Debug\BasicSecurityProject.exe.config
+C:\Users\dries\OneDrive\2TIN\Semester 2\security\BasicSecurityPxl07\BasicSecurityProject\BasicSecurityProject\obj\Debug\BasicSecurityProject.exe
+C:\Users\dries\OneDrive\2TIN\Semester 2\security\BasicSecurityPxl07\BasicSecurityProject\BasicSecurityProject\obj\Debug\BasicSecurityProject.pdb
