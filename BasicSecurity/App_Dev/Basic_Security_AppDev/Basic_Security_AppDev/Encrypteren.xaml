@@ -1,0 +1,42 @@
+﻿<Grid x:Class="Basic_Security_AppDev.Encrypteren"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      Margin="10,10,10,10" Width="475" Height="200">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+        <RowDefinition Height="25"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="150"/>
+        <ColumnDefinition Width="250"/>
+        <ColumnDefinition Width="75"/>
+    </Grid.ColumnDefinitions>
+    <Label Content="File:" Grid.Row="0" Grid.Column="0" VerticalContentAlignment="Top"/>
+    <TextBox Name="fileTextBox" Grid.Row="0" Grid.Column="1" VerticalContentAlignment="Center"/>
+    <Button Name="fileButton" Content="..." Grid.Row="0" Grid.Column="2" Click="fileButton_Click"/>
+    <Label Content="To folder:" Grid.Row="1" Grid.Column="0"/>
+    <TextBox Name="folderTextBox" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center"/>
+    <Button Name="folderButton" Content="..." Grid.Row="1" Grid.Column="2" Click="folderButton_Click"/>
+    <Label Content="Des key:" Grid.Row="2" Grid.Column="0"/>
+    <TextBox Name="desTextBox" Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Center"/>
+    <Button Name="desButton" Content="Generate" Grid.Row="2" Grid.Column="2" Click="desButton_Click"/>
+    <Label Content="My private key file:" Grid.Row="3" Grid.Column="0"/>
+    <TextBox Name="myPrivateKeyFileTextBox" Grid.Row="3" Grid.Column="1" VerticalContentAlignment="Center"/>
+    <Button Name="myPrivateKeyFileButton" Content="..." Grid.Row="3" Grid.Column="2" Height="25" VerticalAlignment="Top" Click="myPrivateKeyFileButton_Click"/>
+    <Label Content="Receivers Public key file:" Grid.Row="4" Grid.Column="0"/>
+    <TextBox Name="receiversPublicKeyFileTextBox" Grid.Row="4" Grid.Column="1" VerticalContentAlignment="Center"/>
+    <Button Name="receiversPublicKeyFileButton" Content="..." Grid.Row="4" Grid.Column="2" Click="receiversPublicKeyFileButton_Click"/>
+    <Label Content="Steganography:" Grid.Row="5" Grid.Column="0"/>
+    <CheckBox Name="steganografieCheckBox" Grid.Row="5" Grid.Column="1" VerticalContentAlignment="Center" Checked="steganografieCheckBox_Checked" Unchecked="steganografieCheckBox_Unchecked" />
+    <Label Content="Image:" Grid.Row="6" Grid.Column="0"/>
+    <TextBox Name="imageTextBox" Grid.Row="6" Grid.Column="1" VerticalContentAlignment="Center" IsEnabled="False"/>
+    <Button Name="imageButton" Content="..." Grid.Row="6" Grid.Column="2" Click="imageButton_Click" IsEnabled="False"/>
+    <Button Name="encryptButton" Content="Encrypt" Grid.Row="7" Grid.Column="2" Click="encryptButton_Click"/>
+</Grid>
