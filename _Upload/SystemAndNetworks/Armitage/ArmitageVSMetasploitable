@@ -1,0 +1,14 @@
+- FTP  		-> Exploitable (vsftpd_234_backdoor)
+- Http 		-> Not exploitable
+- IRC		-> Exploitable (unreal_ircd_3281_backdoor)
+- Misc		-> Exploitable (java_rmi_server)
+- Postgress	-> Not exploitable
+- realserver	-> Not exploitable
+- sambe		-> Exploitable (usermap_script)
+- smtp		-> Not exploitable
+- ssh		-> Not exploitable
+- telnet	-> Not exploitable
+- vnc		-> Not exploitable
+- webapp	-> Not exploitable
+- wyse		-> Not exploitable
+- x11		-> Not exploitable
